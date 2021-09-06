@@ -78,5 +78,6 @@ static const struct arg args[] = {
 	{ separator,       " ", NULL },
 	{ run_command,     "^c#F07178^ %s", "sed \"s/up//;s/down/❌/\" /sys/class/net/e*/operstate" },
 	{ separator,       " ", NULL },
-	{ datetime,        "^c#13CA91^   %s",   "%a %b %d - %R" }
+	{ datetime,        "^c#13CA91^   %s",   "%a %b %d - %R" },
+	{ run_command,     " ",  "echo '  '" }
 };
