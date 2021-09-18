@@ -65,19 +65,19 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ disk_free,       "^c#FF5370^  %2s",  "/home" },
-	{ disk_free,       "^c#FF5370^  %2s",  "/media" },
+	{ disk_free,       "^C1^  %2s",  "/home" },
+	{ disk_free,       "^C1^  %2s",  "/media" },
 	{ separator,       " ", NULL },
-	{ run_command,     "^c#79ffe1^  %2s",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" },
+	{ run_command,     "^C6^  %2s",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" },
 	{ separator,       " ", NULL },
-	{ cpu_perc,        "^c#FDF200^ %2s%%",  NULL },
+	{ cpu_perc,        "^C3^ %2s%%",  NULL },
 	{ separator,       " ", NULL },
-	{ ram_used,        "^c#7898FB^  %2s",  NULL },
+	{ ram_used,        "^C4^  %2s",  NULL },
 	{ separator,       " ", NULL },
-	{ run_command,     "^c#39D7E5^ %s", "vpn" },
+	{ run_command,     "^C6^ %s", "vpn" },
 	{ separator,       " ", NULL },
-	{ run_command,     "^c#F07178^ %s", "sed \"s/up//;s/down/❌/\" /sys/class/net/e*/operstate" },
+	{ run_command,     "^C9^ %s", "sed \"s/up//;s/down/❌/\" /sys/class/net/e*/operstate" },
 	{ separator,       " ", NULL },
-	{ datetime,        "^c#13CA91^   %s",   "%a %b %d - %R" },
+	{ datetime,        "^C2^   %s",   "%a %b %d - %R" },
 	{ run_command,     " ",  "echo '  '" }
 };
