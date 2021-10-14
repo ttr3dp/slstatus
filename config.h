@@ -65,19 +65,13 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ disk_free,       "^C1^  %2s",  "/home" },
-	{ disk_free,       "^C1^  %2s",  "/media" },
-	{ separator,       " ", NULL },
-	{ run_command,     "^C6^  %2s",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" },
-	{ separator,       " ", NULL },
-	{ cpu_perc,        "^C3^ %2s%%",  NULL },
-	{ separator,       " ", NULL },
-	{ ram_used,        "^C4^  %2s",  NULL },
-	{ separator,       " ", NULL },
-	{ run_command,     "^C6^ %s", "vpn" },
-	{ separator,       " ", NULL },
-	{ run_command,     "^C9^ %s", "sed \"s/up//;s/down/❌/\" /sys/class/net/e*/operstate" },
-	{ separator,       " ", NULL },
-	{ datetime,        "^C2^   %s",   "%a %b %d - %R" },
+	{ disk_free,       "^C1^[ /home %2s",  "/home" },
+	{ disk_free,       "^C1^ /media %2s ]",  "/media" },
+	{ run_command,     "^C6^[ TEMP: %2s ]",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" },
+	{ cpu_perc,        "^C3^[ CPU:%2s%% ]",  NULL },
+	{ ram_used,        "^C4^[ RAM: %2s ]",  NULL },
+	{ run_command,     "^C9^[ NET: %s ]", "sed \"s/up/OK/;s/down/DOWN/\" /sys/class/net/e*/operstate" },
+	{ run_command,     "^C6^[ VPN: %s ]", "vpn" },
+	{ datetime,        "^C2^[ %s ]",   "%a %b %d - %R" },
 	{ run_command,     " ",  "echo '  '" }
 };
