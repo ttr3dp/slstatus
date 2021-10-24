@@ -71,7 +71,7 @@ static const struct arg args[] = {
 	{ cpu_perc,        "^C3^[ CPU:%2s%% ]",  NULL },
 	{ ram_used,        "^C4^[ RAM: %2s ]",  NULL },
 	{ run_command,     "^C9^[ NET: %s ]", "sed \"s/up/OK/;s/down/DOWN/\" /sys/class/net/e*/operstate" },
-	{ run_command,     "^C6^[ VPN: %s ]", "vpn" },
+	/* { run_command,     "^C6^[ VPN: %s ]", "vpn" }, */
 	{ datetime,        "^C2^[ %s ]",   "%a %b %d - %R" },
 	{ run_command,     " ",  "echo '  '" }
 };
