@@ -65,16 +65,16 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ disk_free,       "  %2s ",  "/home" },
+	{ disk_free,       "^C4^  %2s ",  "/home" },
 	{ disk_free,       "  %2s ",  "/mnt/data" },
 	/* { run_command,     "TEMP: %2s ]",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" }, */
-	{ cpu_perc,        " %2s%% ",  NULL },
-	{ ram_used,        "  %2s ",  NULL },
-	{ battery_perc,    "  %2s", "BAT0" },
+	{ cpu_perc,        "^C2^ %2s%% ",  NULL },
+	{ ram_used,        "^C3^  %2s ",  NULL },
+	{ battery_perc,    "^C5^  %2s", "BAT0" },
 	{ battery_state,    " %s ", "BAT0" },
-	{ wifi_essid,      "  %s",  "wlan0" },
+	{ wifi_essid,      "^C6^  %s",  "wlan0" },
 	{ wifi_perc,       " %2s%% ",  "wlan0" },
-	{ keymap,          "  %s ", NULL },
-	{ datetime,        " %s ",   " %a %b %d  %R" },
+	{ keymap,          "^C1^  %s ", NULL },
+	{ datetime,        "^C7^ %s ",   " %a %b %d  %R" },
 	{ run_command,     " ",  "echo '  '" }
 };
