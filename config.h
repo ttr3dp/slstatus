@@ -65,16 +65,16 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ disk_free,       "[ /home %2s",  "/home" },
-	{ disk_free,       " /data %2s ]",  "/mnt/data" },
-	{ run_command,     "[ TEMP: %2s ]",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" },
-	{ cpu_perc,        "[ CPU:%2s%% ]",  NULL },
-	{ ram_used,        "[ RAM: %2s ]",  NULL },
-	{ battery_perc,    "[ BAT: %2s", "BAT0" },
-	{ battery_state,    " %s ]", "BAT0" },
-	{ wifi_essid,      "[ NET: %s ",  "wlan0" },
-	{ wifi_perc,       "%2s%% ]",  "wlan0" },
-	{ keymap,          "[ %s ]", NULL },
-	{ datetime,        "[ %s ]",   "%a %b %d - %R" },
+	{ disk_free,       "  %2s ",  "/home" },
+	{ disk_free,       "  %2s ",  "/mnt/data" },
+	/* { run_command,     "TEMP: %2s ]",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" }, */
+	{ cpu_perc,        " %2s%% ",  NULL },
+	{ ram_used,        "  %2s ",  NULL },
+	{ battery_perc,    "  %2s", "BAT0" },
+	{ battery_state,    " %s ", "BAT0" },
+	{ wifi_essid,      "  %s",  "wlan0" },
+	{ wifi_perc,       " %2s%% ",  "wlan0" },
+	{ keymap,          "  %s ", NULL },
+	{ datetime,        " %s ",   " %a %b %d  %R" },
 	{ run_command,     " ",  "echo '  '" }
 };
