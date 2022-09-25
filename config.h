@@ -70,10 +70,11 @@ static const struct arg args[] = {
 	/* { run_command,     "TEMP: %2s ]",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" }, */
 	{ cpu_perc,        "^C2^ %2s%% ",  NULL },
 	{ ram_used,        "^C3^  %2s ",  NULL },
-	{ battery_perc,    "^C5^  %2s", "BAT0" },
+	{ battery_perc,    "^C5^  %2s%%", "BAT0" },
 	{ battery_state,    " %s ", "BAT0" },
 	{ wifi_essid,      "^C6^  %s",  "wlan0" },
 	{ wifi_perc,       " %2s%% ",  "wlan0" },
+	{ run_command,     "^C6^%s",  "vpn" },
 	{ keymap,          "^C1^  %s ", NULL },
 	{ datetime,        "^C7^ %s ",   " %a %b %d  %R" },
 	{ run_command,     " ",  "echo '  '" }
