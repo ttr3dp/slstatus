@@ -36,8 +36,8 @@ static const char unknown_str[] = "n/a";
  * keymap              layout (variant) of current     NULL
  *                     keymap
  * load_avg            load average                    NULL
- * netspeed_rx         receive network speed           interface name (wlan0)
- * netspeed_tx         transfer network speed          interface name (wlan0)
+ * netspeed_rx         receive network speed           interface name (wlp9s0)
+ * netspeed_tx         transfer network speed          interface name (wlp9s0)
  * num_files           number of files in a directory  path
  *                                                     (/home/foo/Inbox/cur)
  * ram_free            free memory in GB               NULL
@@ -60,21 +60,21 @@ static const char unknown_str[] = "n/a";
  * username            username of current user        NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD
- * wifi_perc           WiFi signal in percent          interface name (wlan0)
- * wifi_essid          WiFi ESSID                      interface name (wlan0)
+ * wifi_perc           WiFi signal in percent          interface name (wlp9s0)
+ * wifi_essid          WiFi ESSID                      interface name (wlp9s0)
  */
 static const struct arg args[] = {
 	/* function format          argument */
 	{ disk_free,       "^C4^  %2s ",  "/home" },
-	{ disk_free,       "  %2s ",  "/mnt/data" },
+	{ disk_free,       "  %2s ",  "/media" },
 	/* { run_command,     "TEMP: %2s ]",  "sensors | awk '/Tctl/ {print $2}' | sed 's/+//'" }, */
 	{ cpu_perc,        "^C2^ %2s%% ",  NULL },
 	{ ram_used,        "^C3^  %2s ",  NULL },
 	{ battery_perc,    "^C5^  %2s%%", "BAT0" },
 	{ battery_state,    " %s ", "BAT0" },
-	{ wifi_essid,      "^C6^  %s",  "wlan0" },
-	{ wifi_perc,       " %2s%% ",  "wlan0" },
-	{ run_command,     "^C6^%s",  "vpn" },
+	{ wifi_essid,      "^C6^  %s",  "wlp9s0" },
+	{ wifi_perc,       " %2s%% ",  "wlp9s0" },
+	/* { run_command,     "^C6^%s",  "vpn" }, */
 	{ keymap,          "^C1^  %s ", NULL },
 	{ datetime,        "^C7^ %s ",   " %a %b %d  %R" },
 	{ run_command,     " ",  "echo '  '" }
